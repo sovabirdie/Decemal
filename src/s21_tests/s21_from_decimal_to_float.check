@@ -4,5 +4,6 @@
 #include "s21_decemal.h"
 
 #test abs_1
-    int x = 0;
-    s21_from_decimal_to_float(s21_decimal src, float *dst);;
+    s21_decimal value_1;
+    float dst;
+    ck_assert_int_eq(s21_from_decimal_to_float(value_1,  &dst), 0);
