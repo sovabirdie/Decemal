@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdio.h>  // NOLINT
 
-#include "s21_math.h"
+#include "s21_decemal.h"
 
 int main() {
   // double x;

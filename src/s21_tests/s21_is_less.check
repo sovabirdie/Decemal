@@ -1,0 +1,8 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "s21_decemal.h"
+
+#test abs_1
+    int x = 0;
+    s21_is_less(s21_decimal, s21_decimal);;

@@ -1,5 +1,5 @@
-#ifndef SRC_S21_MATH_VAR_H_
-#define SRC_S21_MATH_VAR_H_
+#ifndef SRC_S21_DECEMAL_VAR_H_
+#define SRC_S21_DECEMAL_VAR_H_
 
 #define S21_M_E 2.7182818284590452354 /* e */
 
@@ -22,5 +22,11 @@ typedef enum {
   PI3_2,  // [PI*3/2, 2PI)
   ERROR,
 } quart;
+
+typedef struct 
+{
+    int bits[4];
+} s21_decimal;
+
 
 #endif

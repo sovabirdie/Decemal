@@ -1,7 +1,7 @@
 CC=gcc
 #CFLAG=-Wall -Wextra -Werror -std=c11
 CFLAG= -g -std=c11
-PROJECT_NAME=s21_math
+PROJECT_NAME=s21_decemal
 TEST?=$(patsubst %.check, % , $(notdir $(wildcard s21_tests/*.check)))
 TEST_CHECK=$(patsubst %, s21_tests/%.check, $(TEST))
 TEST_C = $(patsubst %.check, test_%.c , $(notdir $(TEST_CHECK)))
