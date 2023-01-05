@@ -1,0 +1,28 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "s21_math.h"
+
+#test fabs_1
+    double x=0.0;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);
+
+#test fabs_2
+    double x=-0.99999999;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);
+
+#test fabs_3
+    double x=-0.99999999;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);
+
+#test fabs_4
+    double x=1.7976931348623158e+308;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);
+
+#test fabs_5
+    double x=2.2250738585072014e-308;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);
+
+#test fabs_6
+    double x=-0.0;
+    ck_assert_ldouble_eq_tol(s21_fabs(x), fabsl(x), S21_EPS_TEST);

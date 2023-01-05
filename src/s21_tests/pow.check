@@ -1,0 +1,159 @@
+#include "s21_math.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <float.h>
+
+#test pow_0
+    double x = -10;
+    double y = -3;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_1
+    double x = -10;
+    double y = -0.75;
+    ck_assert_ldouble_nan(pow(x, y));
+
+#test pow_2
+    double x = -10;
+    double y = 1.5;
+    ck_assert_ldouble_nan(pow(x, y));
+
+#test pow_3
+    double x = -10;
+    double y = 3.75;
+    ck_assert_ldouble_nan(pow(x, y));
+
+#test pow_4
+    double x = -10;
+    double y = 6.0;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_5
+    double x = -10;
+    double y = 8.25;
+    ck_assert_ldouble_nan(s21_pow(x, y));
+
+#test pow_6
+    double x = -10;
+    double y = 10.5;
+    ck_assert_ldouble_nan(s21_pow(x, y));
+
+#test pow_7
+    double x = -10;
+    double y = 12.75;
+    ck_assert_ldouble_nan(s21_pow(x, y));
+
+#test pow_8
+    double x = -10;
+    double y = 15.0;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_9
+    double x = -10;
+    double y = 17.25;
+    ck_assert_ldouble_nan(s21_pow(x, y));
+
+#test pow_10
+    double x = 0;
+    double y = -10;
+    ck_assert_ldouble_infinite(s21_pow(x, y));
+
+#test pow_11
+    double x = 0;
+    double y = -7.75;
+    ck_assert_ldouble_infinite(s21_pow(x, y));
+
+#test pow_12
+    double x = 0;
+    double y = -5.5;
+    ck_assert_ldouble_infinite(s21_pow(x, y));
+
+#test pow_13
+    double x = 0;
+    double y = -3.25;
+    ck_assert_ldouble_infinite(s21_pow(x, y));
+
+#test pow_14
+    double x = 0;
+    double y = -1.0;
+    ck_assert_ldouble_infinite(s21_pow(x, y));
+
+#test pow_15
+    double x = 0;
+    double y = 1.25;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_16
+    double x = 0;
+    double y = 3.5;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_17
+    double x = 0;
+    double y = 5.75;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_18
+    double x = 0;
+    double y = 8.0;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_19
+    double x = 0;
+    double y = 10.25;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_20
+    double x = 10;
+    double y = -10;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_21
+    double x = 10;
+    double y = -7.75;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_22
+    double x = 10;
+    double y = -5.5;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_23
+    double x = 10;
+    double y = -3.25;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_24
+    double x = 10;
+    double y = -1.0;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_25
+    double x = 10;
+    double y = 1.25;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_26
+    double x = 10;
+    double y = 3.5;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_27
+    double x = 10;
+    double y = 5.75;
+    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+
+#test pow_28
+    double x = 10;
+    double y = 8.0;
+//  ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+    ck_assert_double_lt(fabsl(s21_pow(x, y ) - powl(x , y)), S21_EPS_TEST);
+
+#test pow_29
+    double x = 10;
+    double y = 8.5;
+//    ck_assert_ldouble_eq_tol(s21_pow(x, y), powl(x, y), S21_EPS_TEST);
+    ck_assert_ldouble_lt(fabsl(s21_pow(x, y) - powl(x, y)), S21_EPS_TEST);
+
+//100000000.00000017368

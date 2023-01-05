@@ -1,0 +1,66 @@
+#include "s21_math.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+#test fmod_1
+    double x=0.0;
+    double y=0.0;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_2
+    double x=1.0;
+    double y=1.0;
+    ck_assert_ldouble_eq_tol(s21_fmod(x,y), fmodl(x,y), S21_EPS_TEST);
+
+#test fmod_3
+    double x=1.0;
+    double y=0.0;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_4
+    double x=S21_PI*10;
+    double y=S21_PI/2;
+    ck_assert_ldouble_eq_tol(s21_fmod(x,y), fmodl(x,y), S21_EPS_TEST);
+
+#test fmod_5
+    double x=1;
+    double y=S21_INF;
+    ck_assert_ldouble_eq_tol(s21_fmod(x,y), fmodl(x,y), S21_EPS_TEST);
+
+#test fmod_6
+    double x=-S21_INF;
+    double y=1;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_7
+    double x=-S21_INF;
+    double y=S21_INF;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_8
+    double x=1;
+    double y=S21_NAN;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_9
+    double x=S21_NAN;
+    double y=1;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_10
+    double x=S21_NAN;
+    double y=S21_NAN;
+    ck_assert_ldouble_nan(s21_fmod(x,y));
+
+#test fmod_11
+    double x=1.1;
+    double y=1.2;
+    for (; x<100;x++){
+        for (; y<100;y++){
+            ck_assert_ldouble_eq_tol(s21_fmod(x,y), fmodl(x,y), S21_EPS_TEST);
+        }
+    }
+    

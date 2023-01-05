@@ -1,0 +1,46 @@
+#include "s21_math.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
+#test sin_1
+    double x=0;
+    ck_assert_double_lt(fabsl(s21_sin(x) - sinl(x)), S21_EPS_TEST);
+
+#test sin_2
+    double x=1;
+    ck_assert_double_lt(fabsl(s21_sin(x) - sinl(x)), S21_EPS_TEST);
+
+#test sin_3
+    double x=S21_INF;
+    ck_assert_double_nan(s21_sin(x));
+
+#test sin_4
+    double x=S21_NAN;
+    ck_assert_ldouble_nan(s21_sin(x));
+
+#test sin_5
+    double x;
+    long double y;
+    for (y = 0.999999; y > S21_EPS_TEST; y /= 1.1) {
+        //printf("[%L.20f]\n", x);
+        ck_assert_double_lt(fabsl(s21_sin(y) - sinl(y)), S21_EPS_TEST);
+    }
+
+#test sin_6
+    double x;
+    char s21_res[10];
+    char res[10];
+    for (x = -1.0; x < 1; x +=0.00001) {
+        ck_assert_ldouble_eq_tol(s21_sin(x), sinl(x), S21_EPS_TEST);
+    }
+
+#test sin_7
+    double x;
+    for (x = -40.0; x < 1; x +=0.001) {
+        ck_assert_ldouble_eq_tol(s21_sin(x), sinl(x), S21_EPS_TEST);
+    }
+    

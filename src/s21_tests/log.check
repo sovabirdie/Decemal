@@ -1,0 +1,66 @@
+#include "s21_math.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+//long double log(double n)
+
+#test log_0
+    double n = 0.5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_1
+    double n = 1.0;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_2
+    double n = 1.5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_3
+    double n = 2.0;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_4
+    double n = 2.5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_5
+    double n = 3.0;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_6
+    double n = 3.5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_7
+    double n = 4.0;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_8
+    double n = 4.5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_9
+    double n = 5.0;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_10
+    double n = 5;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);
+
+#test log_11
+    double n = 0;
+    ck_assert_double_infinite(s21_log(n));
+
+#test log_12
+    double n = -1;
+    ck_assert_double_nan(s21_log(n));
+
+#test log_13
+    double n = 1;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST); 
+
+#test log_14
+    double n = 10;
+    ck_assert_float_eq_tol(s21_log(n), logl(n), S21_EPS_TEST);    
