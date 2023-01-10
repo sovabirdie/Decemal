@@ -6,10 +6,11 @@ int s21_from_int_to_decimal(int src, s21_decimal *dst) {
   union converter id;
   id.number = src;
 
-  t.bits[3] = 0;
-  t.bits[2] = id.bytes[2];
-  t.bits[1] = id.bytes[1];
-  t.bits[0] = id.bytes[0];
+  t.bits_.exp = 0;
+  t.bits_.sign = 0;
+  t.bits_.byte2 = id.bytes[2];
+  t.bits_.byte1= id.bytes[1];
+  t.bits_.byte0 = id.bytes[0];
 
   t.value_type = NORM;
   dst = &t;
